@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio</title>
-  <meta name="description" content="Portfolio personal">
+  <title>Daniela Quintana · Marketing y contenido</title>
+  <meta name="description" content="Portfolio de Daniela Quintana: estrategia de contenido, community management, branding y Meta Ads.">
+  <meta property="og:title" content="Daniela Quintana · Marketing y contenido">
+  <meta property="og:description" content="No creo contenido, construyo estrategias que convierten.">
+  <meta property="og:image" content="img/koud-tendencias.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%23ff5a6e'/><text x='50' y='66' font-size='46' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'>DQ</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,6 +24,7 @@
       <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
       <ul class="links">
         <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="#proceso">Cómo trabajo</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -40,6 +45,7 @@
         <div class="botones">
           <a href="#proyectos" class="btn primario">Ver proyectos</a>
           <a href="#" id="btn-cv" class="btn" target="_blank" rel="noopener">Descargar CV</a>
+          <a href="#" id="btn-pdf" class="btn" target="_blank" rel="noopener">Portafolio PDF</a>
         </div>
         <ul class="redes" id="redes-hero"></ul>
       </div>
@@ -48,15 +54,31 @@
 
     <section id="sobre" class="seccion">
       <h2 class="titulo revelar">Sobre mí</h2>
+      <blockquote class="frase revelar" id="frase"></blockquote>
       <div class="sobre-grid">
-        <div id="sobre-texto" class="revelar"></div>
-        <div class="habilidades revelar" id="habilidades"></div>
+        <div class="revelar">
+          <div id="sobre-texto"></div>
+          <h3 class="subtitulo">Servicios</h3>
+          <ul class="servicios" id="servicios"></ul>
+        </div>
+        <div class="revelar">
+          <div id="habilidades"></div>
+          <h3 class="subtitulo">Herramientas</h3>
+          <ul class="chips" id="herramientas"></ul>
+        </div>
       </div>
       <div class="cifras" id="cifras"></div>
     </section>
 
+    <section id="proceso" class="seccion">
+      <h2 class="titulo revelar">Cómo trabajo</h2>
+      <p class="lead revelar">Del objetivo al resultado, en cinco pasos.</p>
+      <ol class="proceso" id="lista-proceso"></ol>
+    </section>
+
     <section id="proyectos" class="seccion">
       <h2 class="titulo revelar">Proyectos</h2>
+      <p class="lead revelar">Cada proyecto indica el objetivo, mi participación y el resultado. Haz clic para ver el detalle.</p>
       <div class="filtros revelar" id="filtros"></div>
       <div class="proyectos" id="lista-proyectos"></div>
     </section>
@@ -67,10 +89,10 @@
     </section>
 
     <section id="contacto" class="seccion">
-      <h2 class="titulo revelar">Contacto</h2>
+      <h2 class="titulo revelar">Hablemos de tu contenido</h2>
       <div class="contacto-grid">
         <div class="revelar">
-          <p class="lead">¿Tienes un proyecto en mente o una oferta? Escríbeme.</p>
+          <p class="lead">¿Tienes un proyecto, una marca que necesita estrategia o una vacante? Escríbeme.</p>
           <p><a id="email-link" class="email"></a></p>
           <p id="ubicacion" class="muted"></p>
           <ul class="redes" id="redes-contacto"></ul>

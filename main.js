@@ -6,7 +6,7 @@
   const esc = (t = "") =>
     String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const colores = [
-    ["#7c5cff", "#22d3ee"], ["#f43f5e", "#f59e0b"], ["#10b981", "#3b82f6"],
+    ["#ff5a6e", "#8b7cf6"], ["#8b7cf6", "#ff5a6e"], ["#10b981", "#3b82f6"],
     ["#a855f7", "#ec4899"], ["#0ea5e9", "#6366f1"], ["#f97316", "#84cc16"],
   ];
 
@@ -23,27 +23,30 @@
   });
 
   // ---------- Contenido ----------
-  document.title = `${D.nombre} — Portfolio`;
-  $("#logo").innerHTML = `${esc(D.iniciales)}<span>.</span>`;
+    $("#logo").innerHTML = `${esc(D.iniciales)}<span>.</span>`;
   $("#nombre").textContent = D.nombre;
   $("#descripcion").textContent = D.descripcion;
-  $("#pie-nombre").textContent = D.nombre;
-  $("#anio").textContent = new Date().getFullYear();
+    $("#anio").textContent = new Date().getFullYear();
   $("#avatar").innerHTML = D.foto ? `<img src="${esc(D.foto)}" alt="${esc(D.nombre)}">` : esc(D.iniciales);
   if (D.cv) $("#btn-cv").href = D.cv; else $("#btn-cv").remove();
+  if (D.portafolioPdf) $("#btn-pdf").href = D.portafolioPdf; else $("#btn-pdf").remove();
+  $("#frase").textContent = D.frase ? `“${D.frase}”` : "";
+  $("#pie-nombre").textContent = D.nombreCompleto || D.nombre;
 
   const redesHTML = D.redes.map((r) => `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}</a></li>`).join("");
   $("#redes-hero").innerHTML = redesHTML;
   $("#redes-contacto").innerHTML = redesHTML;
 
   $("#sobre-texto").innerHTML = D.sobreMi.map((p) => `<p>${esc(p)}</p>`).join("");
+  const chips = (l) => l.map((x) => `<li>${esc(x)}</li>`).join("");
+  $("#servicios").innerHTML = chips(D.servicios || []);
+  $("#herramientas").innerHTML = chips(D.herramientas || []);
   $("#habilidades").innerHTML = D.habilidades.map((h) => `
-    <div class="habilidad">
-      <div class="habilidad-cab"><span>${esc(h.nombre)}</span><span>${h.nivel}%</span></div>
-      <div class="barra"><span data-nivel="${h.nivel}"></span></div>
-    </div>`).join("");
+    <div class="grupo"><h3>${esc(h.grupo)}</h3><ul class="chips">${chips(h.items)}</ul></div>`).join("");
+  $("#lista-proceso").innerHTML = (D.proceso || []).map((p) => `
+    <li class="paso revelar"><h3>${esc(p.titulo)}</h3><p>${esc(p.texto)}</p></li>`).join("");
   $("#cifras").innerHTML = D.cifras.map((c) => `
-    <div class="cifra revelar"><strong data-valor="${c.valor}" data-sufijo="${esc(c.sufijo)}">0</strong><span>${esc(c.texto)}</span></div>`).join("");
+    <div class="cifra revelar"><strong data-valor="${c.valor}" data-prefijo="${esc(c.prefijo || "")}" data-sufijo="${esc(c.sufijo)}">0</strong><span>${esc(c.texto)}</span></div>`).join("");
 
   $("#linea-tiempo").innerHTML = D.experiencia.map((e) => `
     <li class="hito revelar">
@@ -60,16 +63,18 @@
   // ---------- Proyectos ----------
   const imagen = (p, i) => p.imagen
     ? `<img src="${esc(p.imagen)}" alt="${esc(p.titulo)}" loading="lazy">`
-    : `<div class="placeholder" style="background:linear-gradient(135deg,${colores[i % colores.length].join(",")})">${esc(p.titulo.slice(0, 2).toUpperCase())}</div>`;
+    : `<div class="placeholder" style="background:linear-gradient(135deg,${colores[i % colores.length].join(",")})">${esc(p.titulo.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase())}</div>`;
 
   $("#lista-proyectos").innerHTML = D.proyectos.map((p, i) => `
-    <article class="tarjeta revelar" data-cat="${esc(p.categoria)}" data-i="${i}" tabindex="0">
+    <article class="tarjeta revelar${p.destacado ? " destacada" : ""}" data-cat="${esc(p.categoria)}" data-i="${i}" tabindex="0">
       <div class="tarjeta-img">${imagen(p, i)}</div>
       <div class="tarjeta-cuerpo">
-        <span class="cat">${esc(p.categoria)}</span>
+        <span class="cat">${esc(p.categoria)}${p.destacado ? '<span class="insignia">Caso destacado</span>' : ""}</span>
         <h3>${esc(p.titulo)}</h3>
+        ${p.cliente ? `<span class="cliente">${esc(p.cliente)}</span>` : ""}
         <p>${esc(p.descripcion)}</p>
         <ul class="etiquetas">${p.etiquetas.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+        <span class="ver-mas">Ver detalle →</span>
       </div>
     </article>`).join("");
 
@@ -110,7 +115,11 @@
       <div class="tarjeta-cuerpo">
         <span class="cat">${esc(p.categoria)}</span>
         <h3>${esc(p.titulo)}</h3>
+        ${p.cliente ? `<span class="cliente">${esc(p.cliente)}</span>` : ""}
         <p>${esc(p.descripcion)}</p>
+        ${[["Objetivo", p.objetivo], ["Mi participación", p.participacion], ["Resultado", p.resultado]]
+          .filter((b) => b[1]).map((b) => `<div class="bloque"><h4>${b[0]}</h4><p>${esc(b[1])}</p></div>`).join("")}
+        ${(p.galeria || []).length ? `<div class="galeria">${p.galeria.map((g) => `<img src="${esc(g)}" alt="${esc(p.titulo)}" loading="lazy">`).join("")}</div>` : ""}
         <ul class="etiquetas">${p.etiquetas.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
         ${enlaces ? `<div class="botones">${enlaces}</div>` : ""}
       </div>`;
@@ -145,10 +154,10 @@
 
   // ---------- Animaciones al hacer scroll ----------
   const animarCifra = (el) => {
-    const fin = +el.dataset.valor, suf = el.dataset.sufijo, t0 = performance.now();
+    const fin = +el.dataset.valor, suf = el.dataset.sufijo, pre = el.dataset.prefijo, t0 = performance.now();
     const paso = (t) => {
       const k = Math.min((t - t0) / 1500, 1);
-      el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))) + suf;
+      el.textContent = pre + Math.round(fin * (1 - Math.pow(1 - k, 3))).toLocaleString("es-MX") + suf;
       if (k < 1) requestAnimationFrame(paso);
     };
     requestAnimationFrame(paso);
