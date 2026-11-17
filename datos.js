@@ -59,12 +59,13 @@ const DATOS = {
   habilidades: [
     { grupo: "Contenido y comunidad", items: ["Calendarios de contenido", "Copywriting", "Programación", "Moderación", "Métricas y reportes"] },
     { grupo: "Paid media y CRM", items: ["Meta Ads (leads)", "Email marketing", "Lead nurturing", "Prospección B2B", "Segmentación de bases"] },
-    { grupo: "Diseño", items: ["Branding e identidad", "Logotipos y manuales", "Piezas para redes", "Presentaciones", "Landing pages"] },
+    { grupo: "Diseño y video", items: ["Branding e identidad", "Logotipos y manuales", "Piezas para redes", "Reels verticales", "Presentaciones", "Landing pages"] },
+    { grupo: "Negocio y producto digital", items: ["Estrategia de precios", "Diseño de producto digital", "Venta por redes y WhatsApp", "Facturación y control de obra", "IA generativa"] },
   ],
 
   herramientas: [
     "HubSpot", "Meta Ads Manager", "Meta Business Suite", "Mailchimp", "Waalaxy", "Canva Pro",
-    "CapCut", "Illustrator", "Photoshop", "Notion", "Asana", "Trello", "Google Workspace",
+    "CapCut", "Illustrator", "Photoshop", "Notion", "Asana", "Trello", "Google Workspace", "Hojas de cálculo", "PayPal", "IA generativa (Claude)",
   ],
 
   proceso: [
@@ -139,15 +140,26 @@ const DATOS = {
       etiquetas: ["Community management", "Mailchimp", "Diseño corporativo"],
     },
     {
-      titulo: "Mesa para Todos: 7 recetarios digitales",
-      cliente: "Proyecto propio · WhatsApp",
-      categoria: "Editorial",
-      descripcion: "Escribí más de 800 recetas en 7 libros y diseñé la oferta de venta por WhatsApp.",
-      objetivo: "Ofrecer recetas prácticas y baratas para el día a día y las fiestas, en PDF que llega al instante, con una oferta fácil de entender y de elegir.",
-      participacion: "Escribí los 7 libros y redacté el mensaje de catálogo y paquetes que uso con mis clientes.",
-      resultado: "Oferta en tres niveles: libro suelto ($89 a $99), colecciones ($249 y $299) y paquete completo en $349, con el ahorro a la vista (por separado serían $633).",
+      titulo: "Mesa para Todos: marca de recetarios digitales",
+      cliente: "Fundadora y creadora de contenido · Oct 2026 – actualidad",
+      categoria: "Producto digital",
+      descripcion: "Creé y lancé una marca con 7 recetarios en PDF y más de 800 recetas, vendidos por redes sociales y WhatsApp.",
+      objetivo: "Ofrecer recetas prácticas para mamás con poco tiempo y presupuesto, familias veganas y niños con alergias, en PDF que llega al instante y con una oferta fácil de elegir.",
+      participacion: "Escribí los 7 libros y diseñé la estrategia de precios y paquetes (de $89 a $349 MXN) para aumentar el ticket promedio. Produje el material de venta: anuncios para Facebook e Instagram, historias, catálogo, tabla comparativa y muestras gratuitas. Escribí los textos publicitarios y guiones de venta por WhatsApp, ejecuté campañas de lanzamiento y de urgencia, e implementé el cobro con PayPal y transferencia y la entrega digital por WhatsApp. Dirigí y edité el contenido con apoyo de IA (Claude) y Canva.",
+      resultado: "Oferta en tres niveles: libro suelto ($89 a $99), colecciones ($249 y $299) y paquete completo en $349, con el ahorro a la vista (por separado serían $633). Proceso completo de venta, cobro y entrega funcionando.",
       imagen: "img/mesa-para-todos.jpg",
-      etiquetas: ["Copywriting", "Producto digital", "Ventas"],
+      etiquetas: ["Copywriting", "Branding", "Estrategia de precios", "Venta por redes", "IA generativa"],
+    },
+    {
+      titulo: "Sistema administrativo y de marketing para una remodeladora",
+      cliente: "Proyecto personal · Nov 2026",
+      categoria: "Estrategia",
+      descripcion: "Facturación por etapas, control de obra y plan de contenido bilingüe con más de 20 reels.",
+      objetivo: "Ordenar la administración de una empresa de remodelación y darle una presencia en redes pensada para EE. UU. y México.",
+      participacion: "Diseñé un sistema de facturación por etapas (depósito, pago de progreso, órdenes de cambio y factura final) con una herramienta propia que genera facturas en PDF y calcula saldos. Armé una hoja de control de obra con cobranza, gastos por categoría, asistencia y horas extra según las reglas laborales de California. Investigué tendencias de redes en EE. UU. y México y elaboré dos calendarios mensuales (inglés y español) con guiones y métricas.",
+      resultado: "Más de 20 reels verticales bilingües editados en formatos de tendencia (POV, antes y después, pantalla dividida), y un sistema de facturación y control de obra listo para usar.",
+      imagen: "",
+      etiquetas: ["Hojas de cálculo", "Automatización", "CapCut", "Reels", "Contenido bilingüe"],
     },
     {
       titulo: "Atlas Apócrifo de Calles y Zoológicos",
@@ -163,6 +175,18 @@ const DATOS = {
   ],
 
   experiencia: [
+    {
+      fecha: "Nov 2026",
+      puesto: "Sistema administrativo y de marketing",
+      lugar: "Proyecto personal · Empresa de remodelación",
+      texto: "Facturación por etapas con generación de PDF, control de obra con horas extra según reglas de California, plan de contenido bilingüe y más de 20 reels.",
+    },
+    {
+      fecha: "Oct 2026 — Actualidad",
+      puesto: "Fundadora y creadora de contenido",
+      lugar: "Mesa para Todos · Productos digitales",
+      texto: "Marca de 7 recetarios en PDF (800+ recetas): precios y paquetes, anuncios, guiones de venta por WhatsApp, campañas de lanzamiento y cobro con PayPal.",
+    },
     {
       fecha: "May 2024 — Mar 2026",
       puesto: "Auxiliar Comercial y de Marketing",
