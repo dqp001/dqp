@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre mí · Daniela Quintana</title>
+  <meta name="description" content="Quién es Daniela Quintana: perfil, habilidades, herramientas y trayectoria.">
+  <meta property="og:title" content="Sobre mí · Daniela Quintana">
+  <meta property="og:description" content="Quién es Daniela Quintana: perfil, habilidades, herramientas y trayectoria.">
+  <meta property="og:image" content="img/koud-linkedin-mini.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%23ff5a6e'/><text x='50' y='66' font-size='46' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'>DQ</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="progreso" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="index.html" class="logo" id="logo" aria-label="Inicio"></a>
+    <nav aria-label="Principal">
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="links"></ul>
+    </nav>
+    <button class="tema" aria-label="Cambiar tema">◐</button>
+  </header>
+
+  <main>
+    <section class="pagina-hero ">
+      <canvas id="particulas" aria-hidden="true"></canvas>
+      <div class="burbuja b1" data-parallax="0.25" aria-hidden="true"></div>
+      <div class="burbuja b2" data-parallax="-0.15" aria-hidden="true"></div>
+      <div class="pagina-hero-contenido">
+        <p class="saludo">Sobre mí</p>
+        <h1 >Estrategia con intención</h1>
+        
+        <div class="avatar grande" id="avatar"></div>
+        <blockquote class="frase" id="frase"></blockquote>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="sobre-grid">
+        <div class="revelar">
+          <h2 class="titulo" data-split>Mi historia</h2>
+          <div id="sobre-texto"></div>
+          <div class="botones izq">
+            <a href="#" id="btn-cv" class="btn primario" target="_blank" rel="noopener">Descargar CV</a>
+            <a href="#" id="btn-pdf" class="btn" target="_blank" rel="noopener">Portafolio PDF</a>
+          </div>
+        </div>
+        <div class="datos-rapidos revelar" id="datos-rapidos"></div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo" data-split>Habilidades</h2>
+      <div class="habilidades-grid" id="habilidades"></div>
+    </section>
+
+    <section class="marquesina-sec" aria-label="Herramientas">
+      <div class="marquesina"><div class="marquesina-pista" id="marquesina"></div></div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo" data-split>Trayectoria</h2>
+      <ol class="linea-tiempo" id="linea-tiempo"></ol>
+    </section>
+
+    <section class="seccion">
+      <div class="cta-final revelar">
+        <h2 data-split>¿Hablamos de tu marca?</h2>
+        <p>Cuéntame qué quieres lograr y te propongo por dónde empezar.</p>
+        <div class="botones">
+          <a href="contacto.html" class="btn primario">Escríbeme</a>
+          <a href="como-trabajo.html" class="btn">Cómo trabajo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>© <span id="anio"></span> <span id="pie-nombre"></span></p>
+    <a href="#" class="arriba" aria-label="Volver arriba">↑ Arriba</a>
+  </footer>
+
+  <script src="datos.js"></script>
+  <script src="comun.js"></script>
+  <script src="sobre.js"></script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   <title>Daniela Quintana · Marketing y contenido</title>
   <meta name="description" content="Portfolio de Daniela Quintana: estrategia de contenido, community management, branding y Meta Ads.">
   <meta property="og:title" content="Daniela Quintana · Marketing y contenido">
-  <meta property="og:description" content="No creo contenido, construyo estrategias que convierten.">
+  <meta property="og:description" content="Portfolio de Daniela Quintana: estrategia de contenido, community management, branding y Meta Ads.">
   <meta property="og:image" content="img/koud-linkedin-mini.jpg">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%23ff5a6e'/><text x='50' y='66' font-size='46' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'>DQ</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,8 @@
   <div class="progreso" aria-hidden="true"></div>
 
   <header class="nav">
-    <a href="#inicio" class="logo" id="logo"></a>
-    <nav>
+    <a href="index.html" class="logo" id="logo" aria-label="Inicio"></a>
+    <nav aria-label="Principal">
       <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
       <ul class="links"></ul>
     </nav>
@@ -37,86 +37,65 @@
         <h2 class="rol"><span id="escribiendo"></span><span class="cursor">|</span></h2>
         <p id="descripcion" class="lead"></p>
         <div class="botones">
-          <a href="#proyectos" class="btn primario">Ver proyectos</a>
-          <a href="#" id="btn-cv" class="btn" target="_blank" rel="noopener">Descargar CV</a>
-          <a href="#" id="btn-pdf" class="btn" target="_blank" rel="noopener">Portafolio PDF</a>
+          <a href="proyectos.html" class="btn primario">Ver proyectos</a>
+          <a href="servicios.html" class="btn">Mis servicios</a>
         </div>
         <ul class="redes" id="redes-hero"></ul>
       </div>
-      <a href="#sobre" class="scroll-abajo" aria-label="Bajar">↓</a>
+      <a href="#cifras-sec" class="scroll-abajo" aria-label="Bajar">↓</a>
     </section>
 
-    <section id="sobre" class="seccion">
-      <h2 class="titulo revelar">Sobre mí</h2>
+    <section id="cifras-sec" class="seccion">
       <blockquote class="frase revelar" id="frase"></blockquote>
-      <div class="sobre-grid">
-        <div class="revelar">
-          <div id="sobre-texto"></div>
-          <h3 class="subtitulo">Servicios</h3>
-          <ul class="servicios" id="servicios"></ul>
-        </div>
-        <div class="revelar">
-          <div id="habilidades"></div>
-          <h3 class="subtitulo">Herramientas</h3>
-          <ul class="chips" id="herramientas"></ul>
-        </div>
-      </div>
       <div class="cifras" id="cifras"></div>
     </section>
 
-    <section id="proceso" class="seccion">
-      <h2 class="titulo revelar">Cómo trabajo</h2>
+    <section class="seccion">
+      <div class="cabecera-seccion">
+        <h2 class="titulo" data-split>Lo que hago</h2>
+        <a href="servicios.html" class="enlace-mas revelar">Todos los servicios →</a>
+      </div>
+      <div class="servicios-grid" id="servicios-inicio"></div>
+    </section>
+
+    <section class="seccion">
+      <div class="cabecera-seccion">
+        <h2 class="titulo" data-split>Proyectos destacados</h2>
+        <a href="proyectos.html" class="enlace-mas revelar">Ver todos los proyectos →</a>
+      </div>
+      <div class="proyectos" id="destacados"></div>
+    </section>
+
+    <section class="marquesina-sec" aria-label="Herramientas">
+      <div class="marquesina"><div class="marquesina-pista" id="marquesina"></div></div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo" data-split>Cómo trabajo</h2>
       <p class="lead revelar">Del objetivo al resultado, en cinco pasos.</p>
       <ol class="proceso" id="lista-proceso"></ol>
       <div class="botones izq revelar"><a href="como-trabajo.html" class="btn primario">Conoce mi manera de trabajar →</a></div>
     </section>
 
-    <section id="proyectos" class="seccion">
-      <h2 class="titulo revelar">Proyectos</h2>
-      <p class="lead revelar">Cada proyecto indica el objetivo, mi participación y el resultado. Haz clic para ver el detalle.</p>
-      <div class="filtros revelar" id="filtros"></div>
-      <div class="proyectos" id="lista-proyectos"></div>
-    </section>
-
-    <section id="experiencia" class="seccion">
-      <h2 class="titulo revelar">Experiencia</h2>
-      <ol class="linea-tiempo" id="linea-tiempo"></ol>
-    </section>
-
-    <section id="contacto" class="seccion">
-      <h2 class="titulo revelar">Hablemos de tu contenido</h2>
-      <div class="contacto-grid">
-        <div class="revelar">
-          <p class="lead">¿Tienes un proyecto, una marca que necesita estrategia o una vacante? Escríbeme.</p>
-          <p><a id="email-link" class="email"></a></p>
-          <p id="ubicacion" class="muted"></p>
-          <ul class="redes" id="redes-contacto"></ul>
+    <section class="seccion">
+      <div class="cta-final revelar">
+        <h2 data-split>¿Hablamos de tu marca?</h2>
+        <p>Cuéntame qué quieres lograr y te propongo por dónde empezar.</p>
+        <div class="botones">
+          <a href="contacto.html" class="btn primario">Escríbeme</a>
+          <a href="como-trabajo.html" class="btn">Cómo trabajo</a>
         </div>
-        <form id="formulario" class="formulario revelar">
-          <label>Nombre<input name="nombre" required></label>
-          <label>Email<input name="email" type="email" required></label>
-          <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
-          <button class="btn primario" type="submit">Enviar mensaje</button>
-          <p class="estado" id="estado" role="status"></p>
-        </form>
       </div>
     </section>
   </main>
 
   <footer class="pie">
     <p>© <span id="anio"></span> <span id="pie-nombre"></span></p>
-    <a href="#inicio" aria-label="Volver arriba">↑ Arriba</a>
+    <a href="#" class="arriba" aria-label="Volver arriba">↑ Arriba</a>
   </footer>
 
-  <div class="modal" id="modal" hidden>
-    <div class="modal-caja" role="dialog" aria-modal="true">
-      <button class="cerrar" aria-label="Cerrar">✕</button>
-      <div id="modal-contenido"></div>
-    </div>
-  </div>
-
   <script src="datos.js"></script>
-  <script src="main.js"></script>
   <script src="comun.js"></script>
+  <script src="inicio.js"></script>
 </body>
 </html>

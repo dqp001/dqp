@@ -49,13 +49,87 @@ const DATOS = {
     { prefijo: "$", valor: 6, sufijo: "M+ MXN", texto: "generados por prospectos calificados del embudo" },
   ],
 
+  // ---------------- SERVICIOS ----------------
+  // Cada servicio tiene su propia página (servicio.html?s=slug).
+  // Los proyectos se asignan a uno o varios servicios con "servicios" dentro de cada proyecto.
   servicios: [
-    "Estrategia de contenido para redes sociales",
-    "Planeación de parrillas mensuales",
-    "Copywriting (posts, carruseles y LinkedIn)",
-    "Optimización de perfiles digitales",
-    "Branding y comunicación de marca",
+    {
+      slug: "estrategia-contenido",
+      nombre: "Estrategia de contenido",
+      icono: "◎",
+      colores: ["#ff5a6e", "#8b7cf6"],
+      resumen: "Calendarios y parrillas mensuales con objetivo, pilares y métricas para cada publicación.",
+      descripcion: "Dejo de lado el «publicar por publicar». Defino qué tiene que lograr tu contenido, a quién le habla y cómo se mide, y lo convierto en un calendario que mueve a tu audiencia de conocerte a comprarte.",
+      ideal: "Marcas que publican seguido pero no ven resultados, o que no saben qué publicar cada semana.",
+      incluye: ["Diagnóstico de tus redes y tu audiencia", "Pilares de contenido: educación, autoridad y conversión", "Parrilla mensual con formato, gancho, CTA y KPI de cada post", "Calendarios bilingües (español e inglés) cuando se necesitan"],
+      metricas: ["Alcance", "Guardados", "Compartidos", "Seguidores nuevos"],
+      herramientas: ["Notion", "Google Sheets", "Meta Business Suite", "Asana"],
+    },
+    {
+      slug: "copywriting",
+      nombre: "Copywriting",
+      icono: "✎",
+      colores: ["#8b7cf6", "#ff5a6e"],
+      resumen: "Textos que conectan y venden: carruseles, captions, LinkedIn, anuncios y guiones de venta.",
+      descripcion: "Escribo para que te lean y te respondan. Una idea por pieza, un gancho que detenga el scroll y una sola llamada a la acción clara.",
+      ideal: "Negocios que tienen buen producto pero les cuesta explicarlo o venderlo por escrito.",
+      incluye: ["Texto del diseño y caption de cada publicación", "Posts para LinkedIn B2B", "Anuncios para Meta orientados a conversión", "Guiones de venta y catálogos para WhatsApp", "Correos de email marketing"],
+      metricas: ["Engagement", "Clics", "Mensajes", "Apertura y CTR de email"],
+      herramientas: ["Google Docs", "IA generativa (Claude)", "Mailchimp", "HubSpot"],
+    },
+    {
+      slug: "community-management",
+      nombre: "Community management",
+      icono: "♡",
+      colores: ["#f472b6", "#8b7cf6"],
+      resumen: "Gestión diaria de tus redes: publicación, moderación y atención a comentarios y mensajes.",
+      descripcion: "Tu comunidad no se queda sin respuesta. Programo, publico, modero y atiendo mensajes para que tu marca esté presente todos los días.",
+      ideal: "Marcas que no tienen tiempo de atender sus redes o que reciben mensajes que se quedan sin contestar.",
+      incluye: ["Programación de publicaciones", "Moderación de comentarios y mensajes directos", "Respuestas automáticas por palabra clave en WhatsApp y Messenger", "Optimización de perfiles: bio, destacados y enlaces", "Reporte de desempeño"],
+      metricas: ["Mensajes atendidos", "Engagement", "Visitas al perfil", "Crecimiento de seguidores"],
+      herramientas: ["Meta Business Suite", "WhatsApp Business", "LinkedIn", "Canva Pro"],
+    },
+    {
+      slug: "meta-ads",
+      nombre: "Meta Ads y embudos",
+      icono: "↗",
+      colores: ["#22c1c3", "#8b7cf6"],
+      resumen: "Campañas de generación de leads en Facebook e Instagram, con embudo, formularios y reportes.",
+      descripcion: "Convierto el presupuesto de publicidad en contactos medibles: estructura de campañas, embudo completo y reportes ejecutivos para decidir con datos.",
+      ideal: "Empresas que ya invierten en publicidad pero no saben qué les está funcionando, o que reciben mensajes sin datos útiles.",
+      incluye: ["Auditoría de la cuenta de Meta Ads", "Estructura de campañas: objetivo, audiencia, presupuesto y evento de optimización", "Embudo con formularios, email, webinar y WhatsApp", "Optimización de presupuestos por campaña y conjunto de anuncios", "Reportes ejecutivos semanales con KPIs"],
+      metricas: ["Costo por resultado", "Leads y registros", "CTR", "Uso de presupuesto"],
+      herramientas: ["Meta Ads Manager", "HubSpot", "Mailchimp", "Excel / Google Sheets", "PowerPoint"],
+    },
+    {
+      slug: "branding",
+      nombre: "Branding y diseño",
+      icono: "◆",
+      colores: ["#f59e0b", "#ff5a6e"],
+      resumen: "Identidad visual desde cero y piezas gráficas: logotipo, manual de marca, redes y diseño editorial.",
+      descripcion: "Construyo marcas coherentes y reconocibles, y diseño las piezas que las comunican: desde el logotipo hasta el carrusel o la portada de un libro.",
+      ideal: "Marcas nuevas que necesitan identidad, o marcas con una imagen desordenada que no se reconoce.",
+      incluye: ["Logotipo y variaciones", "Manual de identidad visual", "Plantillas y piezas para redes sociales", "Materiales corporativos, comerciales y presentaciones", "Portadas y diseño editorial"],
+      metricas: ["Coherencia visual", "Reconocimiento de marca", "Piezas listas para usar"],
+      herramientas: ["Adobe Illustrator", "Adobe Photoshop", "Canva Pro"],
+    },
+    {
+      slug: "reels-video",
+      nombre: "Reels y video",
+      icono: "▶",
+      colores: ["#8b7cf6", "#22c1c3"],
+      resumen: "Reels verticales en formatos de tendencia, con guion, edición y versiones en español e inglés.",
+      descripcion: "Investigo qué está funcionando, escribo el guion y edito reels cortos que retienen: POV, antes y después, pantalla dividida o cinemáticos.",
+      ideal: "Negocios con mucho material visual (obras, productos, espacios) que no lo están aprovechando en video.",
+      incluye: ["Investigación de tendencias (EE. UU. y México)", "Guiones y ganchos", "Edición en formatos de tendencia", "Versiones bilingües con texto o voz"],
+      metricas: ["Reproducciones", "Retención", "Compartidos", "Guardados"],
+      herramientas: ["CapCut", "Canva Pro", "IA para edición de video"],
+    },
   ],
+
+  // Proyectos que aparecen en el inicio (por su slug)
+  destacados: ["embudo-meta-koud", "mesa-para-todos", "linkedin-koud", "remodeladora"],
+
 
   habilidades: [
     { grupo: "Contenido y comunidad", items: ["Calendarios de contenido", "Copywriting", "Programación", "Moderación", "Métricas y reportes"] },
@@ -81,6 +155,8 @@ const DATOS = {
   // galeria: imágenes extra que se ven al abrir el proyecto
   proyectos: [
     {
+      slug: "embudo-meta-koud",
+      servicios: ["meta-ads", "estrategia-contenido", "copywriting"],
       titulo: "De conversaciones sueltas a un embudo medible",
       cliente: "KOUD Developers · Meta",
       categoria: "Estrategia",
@@ -96,6 +172,8 @@ const DATOS = {
       etiquetas: ["Meta Ads", "Embudo", "Email marketing", "Webinar"],
     },
     {
+      slug: "meta-ads-credito",
+      servicios: ["meta-ads", "copywriting"],
       titulo: "Gestión y optimización de Meta Ads para e-commerce de crédito",
       cliente: "Especialista en Pauta Digital (freelance) · Sep 2026 – actualidad",
       categoria: "Paid media",
@@ -108,6 +186,8 @@ const DATOS = {
       etiquetas: ["Meta Ads Manager", "Reportes", "Análisis de datos", "WhatsApp Business", "Copywriting"],
     },
     {
+      slug: "linkedin-koud",
+      servicios: ["estrategia-contenido", "copywriting", "community-management", "branding"],
       titulo: "Calendario de LinkedIn B2B: 4 semanas",
       cliente: "KOUD Developers · LinkedIn",
       categoria: "Redes sociales",
@@ -126,6 +206,8 @@ const DATOS = {
       etiquetas: ["LinkedIn", "Carruseles", "Copywriting", "B2B"],
     },
     {
+      slug: "marca-personal-dqp",
+      servicios: ["estrategia-contenido", "copywriting", "branding"],
       titulo: "Marca personal: primero confianza, después venta",
       cliente: "@dqp_mkt · Instagram",
       categoria: "Redes sociales",
@@ -147,6 +229,8 @@ const DATOS = {
       etiquetas: ["Instagram", "Estrategia", "Diseño", "Copy"],
     },
     {
+      slug: "fitpod",
+      servicios: ["branding"],
       titulo: "FitPod: identidad visual desde cero",
       cliente: "FitPod · Micro-gimnasio, Querétaro",
       categoria: "Branding",
@@ -159,6 +243,8 @@ const DATOS = {
       etiquetas: ["Branding", "Logotipo", "Manual de marca"],
     },
     {
+      slug: "palau",
+      servicios: ["community-management", "branding"],
       titulo: "Redes y materiales corporativos industriales",
       cliente: "Palau Suministros Industriales · 2023",
       categoria: "Branding",
@@ -170,6 +256,8 @@ const DATOS = {
       etiquetas: ["Community management", "Mailchimp", "Diseño corporativo"],
     },
     {
+      slug: "mesa-para-todos",
+      servicios: ["copywriting", "branding", "estrategia-contenido"],
       titulo: "Mesa para Todos: marca de recetarios digitales",
       cliente: "Fundadora y creadora de contenido · Oct 2026 – actualidad",
       categoria: "Producto digital",
@@ -183,6 +271,8 @@ const DATOS = {
       etiquetas: ["Copywriting", "Branding", "Estrategia de precios", "Venta por redes", "IA generativa"],
     },
     {
+      slug: "remodeladora",
+      servicios: ["reels-video", "estrategia-contenido"],
       titulo: "Sistema administrativo y de marketing para una remodeladora",
       cliente: "Proyecto personal · Nov 2026",
       categoria: "Estrategia",
@@ -201,6 +291,8 @@ const DATOS = {
       etiquetas: ["Hojas de cálculo", "Automatización", "CapCut", "Reels", "Contenido bilingüe"],
     },
     {
+      slug: "portadas-editoriales",
+      servicios: ["branding"],
       titulo: "Portadas editoriales: dos libros",
       cliente: "Atlas Apócrifo de Calles y Zoológicos (Irma del Ángel) · Palabras para el corazón (Cirilo Quintana Alvarado)",
       categoria: "Editorial",
@@ -268,10 +360,11 @@ const DATOS = {
   // ---------------- MENÚ (aparece en todas las páginas) ----------------
   menu: [
     { texto: "Inicio", url: "index.html" },
-    { texto: "Mi manera de trabajar", url: "como-trabajo.html" },
-    { texto: "Proyectos", url: "index.html#proyectos" },
-    { texto: "Experiencia", url: "index.html#experiencia" },
-    { texto: "Contacto", url: "index.html#contacto" },
+    { texto: "Sobre mí", url: "sobre-mi.html" },
+    { texto: "Servicios", url: "servicios.html", submenu: "servicios" },
+    { texto: "Proyectos", url: "proyectos.html" },
+    { texto: "Cómo trabajo", url: "como-trabajo.html" },
+    { texto: "Contacto", url: "contacto.html" },
   ],
 
   // ---------------- PÁGINA "MI MANERA DE TRABAJAR" ----------------
