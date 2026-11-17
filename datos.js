@@ -264,4 +264,94 @@ const DATOS = {
       texto: "Certificaciones HubSpot Academy: Inbound, Inbound Marketing y Marketing en Redes Sociales.",
     },
   ],
+
+  // ---------------- MENÚ (aparece en todas las páginas) ----------------
+  menu: [
+    { texto: "Inicio", url: "index.html" },
+    { texto: "Mi manera de trabajar", url: "como-trabajo.html" },
+    { texto: "Proyectos", url: "index.html#proyectos" },
+    { texto: "Experiencia", url: "index.html#experiencia" },
+    { texto: "Contacto", url: "index.html#contacto" },
+  ],
+
+  // ---------------- PÁGINA "MI MANERA DE TRABAJAR" ----------------
+  manera: {
+    titulo: "Mi manera de trabajar",
+    intro: "Estrategia primero, contenido después. Antes de diseñar una sola pieza defino qué tiene que lograr, a quién le habla y cómo voy a saber si funcionó.",
+
+    principios: [
+      { icono: "◎", titulo: "Objetivo antes que formato", texto: "No empiezo por «hagamos un reel». Empiezo por «¿qué tiene que pasar?»: seguidores, mensajes, registros o ventas. El formato se elige después." },
+      { icono: "♡", titulo: "Primero confianza, después venta", texto: "Mezclo contenido educativo, de autoridad y de conversión. La audiencia necesita conocerte y confiar en ti antes de comprarte." },
+      { icono: "①", titulo: "Una idea por pieza, un CTA por post", texto: "Cada carrusel cuenta una sola cosa y pide una sola acción: guardar, comentar, escribir o registrarse. Así es fácil de leer y de medir." },
+      { icono: "↗", titulo: "Lo que no se mide no se mejora", texto: "Cada pieza tiene sus métricas desde que se planea. Reviso los números y ajusto el siguiente periodo con datos, no con corazonadas." },
+    ],
+
+    // Pasos del proceso: qué hago yo y qué recibes tú
+    pasos: [
+      {
+        titulo: "Objetivo y audiencia",
+        texto: "Conversamos sobre tu negocio, lo que vendes y lo que quieres lograr. Defino qué debe conseguir el contenido y a quién le habla.",
+        hago: ["Diagnóstico de tus redes y canales actuales", "Definición de objetivo medible (ej. +40% visibilidad en 3 meses)", "Perfil de la audiencia y sus dolores reales"],
+        recibes: "Un diagnóstico claro: qué está pasando hoy, qué falta y qué vamos a medir.",
+      },
+      {
+        titulo: "Calendario",
+        texto: "Planeo temas, formatos y fechas para mantener un ritmo constante y mover a la audiencia por el embudo.",
+        hago: ["Pilares de contenido (educación, autoridad, conversión)", "Parrilla mensual con formato, gancho, CTA y KPI de cada post", "Fechas clave: lanzamientos, webinars y temporadas como el Buen Fin"],
+        recibes: "Tu calendario de contenido listo para aprobar, sin improvisar cada semana.",
+      },
+      {
+        titulo: "Redacción y piezas",
+        texto: "Escribo los textos y preparo las piezas visuales y de video, siempre dentro de tu identidad de marca.",
+        hago: ["Copy del diseño y caption de cada publicación", "Carruseles, historias, anuncios y reels (Canva, CapCut, Adobe)", "Versiones en español e inglés cuando se necesitan"],
+        recibes: "Piezas terminadas y listas para publicar, con texto y diseño alineados.",
+      },
+      {
+        titulo: "Publicación y comunidad",
+        texto: "Programo, publico y respondo comentarios y mensajes para que nadie se quede sin respuesta.",
+        hago: ["Programación en Meta Business Suite y LinkedIn", "Moderación de comentarios y mensajes", "Respuestas automáticas por palabra clave en WhatsApp/Messenger"],
+        recibes: "Presencia constante y una comunidad atendida.",
+      },
+      {
+        titulo: "Medición y ajuste",
+        texto: "Reviso métricas y ajusto la estrategia del siguiente periodo: lo que funciona se repite, lo que no se cambia.",
+        hago: ["Reporte con KPIs y gráficas", "Detección de alertas y oportunidades", "Recomendaciones concretas para el siguiente mes"],
+        recibes: "Un reporte fácil de leer y un plan de mejora, no solo números.",
+      },
+    ],
+
+    // El embudo que uso para pasar de seguidores a clientes
+    embudo: [
+      { etapa: "Visibilidad", texto: "Contenido orgánico y Meta Ads para que te conozcan.", ejemplo: "Tendencias, ganchos contrarios, reels" },
+      { etapa: "Captación", texto: "Formularios con datos clave para convertir interés en contactos.", ejemplo: "Formularios de leads, muestras gratis" },
+      { etapa: "Nutrición", texto: "Email marketing y contenido educativo para generar confianza.", ejemplo: "Secuencias de correo, casos de uso" },
+      { etapa: "Activación", texto: "Un punto de decisión claro: un evento, una oferta o una conversación.", ejemplo: "Webinars, ofertas por WhatsApp" },
+      { etapa: "Comunidad", texto: "Seguimiento continuo con quienes ya te eligieron.", ejemplo: "Grupos de WhatsApp, contenido exclusivo" },
+    ],
+
+    // Qué mido según el objetivo
+    metricas: [
+      { objetivo: "Que te conozcan", kpis: ["Alcance", "Visitas al perfil", "Seguidores nuevos"] },
+      { objetivo: "Que te recuerden", kpis: ["Guardados", "Compartidos", "Comentarios", "Engagement"] },
+      { objetivo: "Que te escriban", kpis: ["Mensajes directos", "Clics al sitio", "Leads y registros"] },
+      { objetivo: "Que te compren", kpis: ["Costo por resultado", "Apertura y CTR de email", "Ventas y ticket promedio"] },
+    ],
+
+    // Cifras reales que respaldan el método
+    pruebas: [
+      { prefijo: "", valor: 48, sufijo: "%", texto: "de crecimiento en la comunidad de LinkedIn de KOUD (800 → 1,190+)" },
+      { prefijo: "", valor: 44, sufijo: "%", texto: "de apertura máxima en email marketing del embudo" },
+      { prefijo: "", valor: 140, sufijo: "", texto: "registros a un webinar con el embudo en Meta" },
+    ],
+
+    preguntas: [
+      { p: "¿Trabajas de forma remota?", r: "Sí. He trabajado de forma remota con empresas de tecnología y agencias en México, y con prospectos de EE. UU. y Canadá. Nos coordinamos por WhatsApp, correo, Zoom o Google Meet." },
+      { p: "¿Con qué tipo de negocios trabajas?", r: "Tecnología y software, educación, recursos humanos, salud y bienestar, gimnasios, industria, pymes y servicios profesionales, y proyectos culturales y editoriales." },
+      { p: "¿Puedes crear contenido en inglés?", r: "Sí. Tengo inglés C1 en lectura y redacción, y he preparado calendarios, captions y reels bilingües para audiencias de EE. UU. y México." },
+      { p: "¿Qué necesito tener para empezar?", r: "Tu objetivo, acceso a tus redes (o a Meta Business Suite) y, si existe, tu identidad de marca. Si no tienes marca, también la puedo diseñar desde cero." },
+      { p: "¿Cada cuánto recibo reportes?", r: "Lo acordamos al inicio. En campañas de pauta trabajo con reportes semanales; en contenido orgánico, normalmente un reporte mensual con ajustes para el siguiente periodo." },
+    ],
+
+    llamado: "¿Te gustaría trabajar así en tu marca?",
+  },
 };

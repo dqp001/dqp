@@ -335,3 +335,137 @@ nav { margin-left: auto; }
 .videos figure { flex: 0 0 auto; width: min(220px, 60vw); scroll-snap-align: start; }
 .videos video { width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; background: #000; display: block; box-shadow: var(--sombra); }
 .videos figcaption { font-size: .82rem; color: var(--muted); margin-top: .4rem; }
+
+/* ================= Varias páginas ================= */
+.botones.izq { justify-content: flex-start; margin-top: 2rem; }
+.links { gap: 1.4rem; }
+
+/* Portada de páginas internas */
+.pagina-hero {
+  position: relative; overflow: hidden; padding: 150px clamp(16px, 5vw, 40px) 70px;
+  display: grid; place-items: center; text-align: center;
+}
+.pagina-hero-contenido { position: relative; z-index: 1; max-width: 820px; }
+.pagina-hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.4rem); margin: .4rem 0 1rem;
+  background: linear-gradient(90deg, var(--texto), var(--acento), var(--acento-2), var(--texto));
+  background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: degradado 8s linear infinite;
+}
+.pagina-hero .frase { margin: 2rem auto 0; text-align: left; font-size: clamp(1.1rem, 2.6vw, 1.5rem); }
+.burbuja { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .35; animation: flotar 9s ease-in-out infinite; }
+.b1 { width: 340px; height: 340px; background: var(--acento); top: 40px; left: -80px; }
+.b2 { width: 300px; height: 300px; background: var(--acento-2); bottom: -60px; right: -60px; animation-delay: -4s; }
+
+/* Principios */
+.principios { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+.principio {
+  background: var(--fondo-2); border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.6rem;
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+.principio:hover { transform: translateY(-6px); border-color: var(--acento); box-shadow: var(--sombra); }
+.principio .icono {
+  display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; font-size: 1.4rem;
+  background: linear-gradient(135deg, var(--acento), var(--acento-2)); color: #fff; margin-bottom: 1rem;
+}
+.principio h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+.principio p { color: var(--muted); font-size: .95rem; }
+
+/* Pasos interactivos */
+.stepper { margin-top: 2rem; }
+.stepper-pasos {
+  --avance: 0; list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: .5rem;
+  position: relative; margin-bottom: 1.5rem;
+}
+.stepper-pasos::before, .stepper-pasos::after {
+  content: ""; position: absolute; top: 22px; left: 10%; height: 3px; border-radius: 3px;
+}
+.stepper-pasos::before { right: 10%; background: var(--borde); }
+.stepper-pasos::after { width: calc(80% * var(--avance)); background: linear-gradient(90deg, var(--acento), var(--acento-2)); transition: width .5s; }
+.stepper-pasos button {
+  position: relative; z-index: 1; width: 100%; background: none; border: 0; cursor: pointer; color: var(--muted);
+  display: grid; justify-items: center; gap: .5rem; font: 500 .92rem "Inter", sans-serif; text-align: center; padding: 0 .2rem;
+}
+.stepper-pasos .num {
+  display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%;
+  background: var(--fondo-2); border: 2px solid var(--borde); font: 700 1.1rem "Space Grotesk", sans-serif; color: var(--texto);
+  transition: all .3s;
+}
+.stepper-pasos button.hecho .num { border-color: var(--acento-2); color: var(--acento-2); }
+.stepper-pasos button[aria-selected="true"] { color: var(--texto); font-weight: 600; }
+.stepper-pasos button[aria-selected="true"] .num {
+  background: linear-gradient(135deg, var(--acento), var(--acento-2)); border-color: transparent; color: #fff; transform: scale(1.12);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--acento) 20%, transparent);
+}
+.stepper-panel {
+  background: var(--fondo-2); border: 1px solid var(--borde); border-radius: var(--radio); padding: clamp(1.3rem, 3vw, 2.2rem);
+}
+.stepper-panel.entra { animation: subir .4s ease; }
+.paso-num { font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--acento); }
+.stepper-panel h3 { font-size: 1.6rem; margin: .3rem 0 .6rem; }
+.panel-cols { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; margin-top: 1.4rem; }
+.panel-cols h4 { font: 600 .78rem "Inter", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--acento-2); margin-bottom: .6rem; }
+.check { list-style: none; display: grid; gap: .55rem; }
+.check li { padding-left: 1.7rem; position: relative; }
+.check li::before {
+  content: "✓"; position: absolute; left: 0; top: .1rem; width: 1.2rem; height: 1.2rem; border-radius: 50%;
+  display: grid; place-items: center; font-size: .7rem; font-weight: 700; color: #fff; background: var(--acento-2);
+}
+.recibes { background: color-mix(in srgb, var(--acento) 10%, transparent); border-radius: 12px; padding: 1.1rem 1.2rem; border-left: 4px solid var(--acento); }
+.panel-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.6rem; }
+.panel-nav .btn:disabled { opacity: .35; cursor: default; transform: none; box-shadow: none; }
+
+/* Embudo */
+.embudo { display: grid; gap: .7rem; margin-top: 2rem; }
+.etapa { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: center; }
+.etapa-barra {
+  width: var(--ancho); justify-self: center; display: flex; align-items: center; gap: .8rem; color: #fff;
+  padding: 1rem 1.2rem; border-radius: 14px; min-height: 64px;
+  background: color-mix(in srgb, var(--acento) calc(100% - var(--i) * 18%), var(--acento-2));
+  transition: transform .3s, filter .3s;
+}
+.etapa:hover .etapa-barra { transform: scale(1.04); filter: brightness(1.08); }
+.etapa-barra .num { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,.22); font-weight: 700; flex: none; }
+.etapa-barra strong { font: 700 1.1rem "Space Grotesk", sans-serif; }
+.etapa-info p { color: var(--texto); }
+.ejemplo { display: inline-block; margin-top: .3rem; font-size: .84rem; color: var(--muted); }
+.ejemplo::before { content: "Ej.: "; font-weight: 600; color: var(--acento-2); }
+
+/* Métricas */
+.metricas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.metrica { background: var(--fondo-2); border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.4rem; }
+.metrica h3 { font-size: 1.1rem; margin-bottom: .8rem; }
+.chips.grande li { font-size: .98rem; padding: .5rem 1rem; }
+
+/* Preguntas */
+.faq { display: grid; gap: .7rem; max-width: 860px; }
+.pregunta { background: var(--fondo-2); border: 1px solid var(--borde); border-radius: 14px; padding: 0 1.3rem; transition: border-color .3s; }
+.pregunta[open] { border-color: var(--acento); }
+.pregunta summary {
+  cursor: pointer; list-style: none; padding: 1.1rem 0; font-weight: 600; display: flex; justify-content: space-between; gap: 1rem;
+}
+.pregunta summary::-webkit-details-marker { display: none; }
+.pregunta summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--acento); transition: transform .3s; }
+.pregunta[open] summary::after { transform: rotate(45deg); }
+.pregunta p { color: var(--muted); padding-bottom: 1.2rem; }
+
+/* Llamado final */
+.cta-final {
+  text-align: center; padding: clamp(2rem, 6vw, 4rem) 1.5rem; border-radius: 24px; color: #fff;
+  background: linear-gradient(135deg, var(--acento), var(--acento-2));
+}
+.cta-final h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+.cta-final .btn { background: #fff; color: #15172e; border: 0; }
+.cta-final .btn.primario { background: #15172e; color: #fff; }
+
+@media (max-width: 1000px) { .links { gap: 1rem; } .links a { font-size: .92rem; } }
+@media (max-width: 800px) {
+  .stepper-pasos { grid-template-columns: 1fr; gap: .3rem; }
+  .stepper-pasos::before, .stepper-pasos::after { display: none; }
+  .stepper-pasos button { grid-template-columns: auto 1fr; justify-items: start; align-items: center; text-align: left; padding: .3rem; }
+  .stepper-pasos .num { width: 38px; height: 38px; }
+  .panel-cols { grid-template-columns: 1fr; }
+  .etapa { grid-template-columns: 1fr; gap: .4rem; }
+  .etapa-barra { width: 100%; }
+  .links a { font-size: 1rem; }
+}

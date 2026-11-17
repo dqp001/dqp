@@ -1,4 +1,4 @@
-// Lógica del portfolio. Normalmente no necesitas tocar este archivo:
+// Lógica de la página de inicio. Normalmente no necesitas tocar este archivo:
 // el contenido se edita en datos.js
 (() => {
   const D = DATOS;
@@ -10,28 +10,13 @@
     ["#a855f7", "#ec4899"], ["#0ea5e9", "#6366f1"], ["#f97316", "#84cc16"],
   ];
 
-  // ---------- Tema claro / oscuro ----------
-  const raiz = document.documentElement;
-  let tema = null;
-  try { tema = localStorage.getItem("tema"); } catch (e) {}
-  if (!tema) tema = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-  raiz.dataset.theme = tema;
-  $(".tema").addEventListener("click", () => {
-    tema = raiz.dataset.theme === "light" ? "dark" : "light";
-    raiz.dataset.theme = tema;
-    try { localStorage.setItem("tema", tema); } catch (e) {}
-  });
-
   // ---------- Contenido ----------
-    $("#logo").innerHTML = `${esc(D.iniciales)}<span>.</span>`;
   $("#nombre").textContent = D.nombre;
   $("#descripcion").textContent = D.descripcion;
-    $("#anio").textContent = new Date().getFullYear();
   $("#avatar").innerHTML = D.foto ? `<img src="${esc(D.foto)}" alt="${esc(D.nombre)}">` : esc(D.iniciales);
   if (D.cv) $("#btn-cv").href = D.cv; else $("#btn-cv").remove();
   if (D.portafolioPdf) $("#btn-pdf").href = D.portafolioPdf; else $("#btn-pdf").remove();
   $("#frase").textContent = D.frase ? `“${D.frase}”` : "";
-  $("#pie-nombre").textContent = D.nombreCompleto || D.nombre;
 
   const redesHTML = D.redes.map((r) => `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}</a></li>`).join("");
   $("#redes-hero").innerHTML = redesHTML;
@@ -171,56 +156,8 @@
   };
   escribir();
 
-  // ---------- Animaciones al hacer scroll ----------
-  const animarCifra = (el) => {
-    const fin = +el.dataset.valor, suf = el.dataset.sufijo, pre = el.dataset.prefijo, t0 = performance.now();
-    const paso = (t) => {
-      const k = Math.min((t - t0) / 1500, 1);
-      el.textContent = pre + Math.round(fin * (1 - Math.pow(1 - k, 3))).toLocaleString("es-MX") + suf;
-      if (k < 1) requestAnimationFrame(paso);
-    };
-    requestAnimationFrame(paso);
-  };
-  const obs = new IntersectionObserver((entradas) => {
-    entradas.forEach((en) => {
-      if (!en.isIntersecting) return;
-      const el = en.target;
-      el.classList.add("visible");
-      el.querySelectorAll(".barra span").forEach((b) => (b.style.width = b.dataset.nivel + "%"));
-      const num = el.querySelector("[data-valor]");
-      if (num) animarCifra(num);
-      obs.unobserve(el);
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll(".revelar").forEach((el) => obs.observe(el));
-
-  // Barra de progreso, menú activo y nav con fondo
-  const secciones = [...document.querySelectorAll("main section")];
-  const linksNav = [...document.querySelectorAll(".links a")];
-  const alScroll = () => {
-    const h = document.documentElement.scrollHeight - innerHeight;
-    $(".progreso").style.width = (h > 0 ? (scrollY / h) * 100 : 0) + "%";
-    $(".nav").classList.toggle("solida", scrollY > 30);
-    let actual = "";
-    secciones.forEach((s) => { if (scrollY >= s.offsetTop - 120) actual = s.id; });
-    linksNav.forEach((a) => a.classList.toggle("activo", a.getAttribute("href") === "#" + actual));
-  };
-  addEventListener("scroll", alScroll, { passive: true });
-  alScroll();
-
-  // Menú móvil
-  const menuBtn = $(".menu-btn"), links = $(".links");
-  menuBtn.addEventListener("click", () => {
-    const abierto = links.classList.toggle("abierto");
-    menuBtn.setAttribute("aria-expanded", abierto);
-  });
-  linksNav.forEach((a) => a.addEventListener("click", () => links.classList.remove("abierto")));
-
-  // Brillo que sigue al ratón
-  const glow = $(".cursor-glow");
-  addEventListener("mousemove", (e) => { glow.style.left = e.clientX + "px"; glow.style.top = e.clientY + "px"; });
-
   // ---------- Partículas conectadas en la portada ----------
+  const raiz = document.documentElement;
   const cv = $("#particulas"), ctx = cv.getContext("2d");
   let pts = [], raton = { x: -999, y: -999 };
   const ajustar = () => {
@@ -268,28 +205,4 @@
     addEventListener("resize", ajustar);
   }
 
-  // ---------- Formulario de contacto ----------
-  $("#formulario").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const f = e.target, estado = $("#estado");
-    const datos = Object.fromEntries(new FormData(f));
-    if (!D.formspreeId) {
-      const asunto = encodeURIComponent(`Contacto desde el portfolio — ${datos.nombre}`);
-      const cuerpo = encodeURIComponent(`${datos.mensaje}\n\n${datos.nombre} (${datos.email})`);
-      location.href = `mailto:${D.email}?subject=${asunto}&body=${cuerpo}`;
-      return;
-    }
-    estado.textContent = "Enviando…";
-    try {
-      const res = await fetch(`https://formspree.io/f/${D.formspreeId}`, {
-        method: "POST", headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify(datos),
-      });
-      if (!res.ok) throw new Error();
-      estado.textContent = "¡Mensaje enviado! Te responderé pronto.";
-      f.reset();
-    } catch {
-      estado.textContent = `No se pudo enviar. Escríbeme a ${D.email}`;
-    }
-  });
 })();

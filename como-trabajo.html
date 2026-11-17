@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi manera de trabajar · Daniela Quintana</title>
+  <meta name="description" content="Cómo trabaja Daniela Quintana: estrategia, calendario, contenido, comunidad y medición.">
+  <meta property="og:title" content="Mi manera de trabajar · Daniela Quintana">
+  <meta property="og:image" content="img/koud-linkedin-mini.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%23ff5a6e'/><text x='50' y='66' font-size='46' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'>DQ</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="progreso" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="index.html" class="logo" id="logo"></a>
+    <nav>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="links"></ul>
+    </nav>
+    <button class="tema" aria-label="Cambiar tema">◐</button>
+  </header>
+
+  <main>
+    <section class="pagina-hero">
+      <div class="burbuja b1" aria-hidden="true"></div>
+      <div class="burbuja b2" aria-hidden="true"></div>
+      <div class="pagina-hero-contenido">
+        <p class="saludo">Método</p>
+        <h1 id="m-titulo"></h1>
+        <p class="lead" id="m-intro"></p>
+        <blockquote class="frase" id="m-frase"></blockquote>
+      </div>
+    </section>
+
+    <section id="principios" class="seccion">
+      <h2 class="titulo revelar">Lo que guía cada proyecto</h2>
+      <div class="principios" id="m-principios"></div>
+    </section>
+
+    <section id="proceso" class="seccion">
+      <h2 class="titulo revelar">El proceso, paso a paso</h2>
+      <p class="lead revelar">Elige un paso para ver qué hago y qué recibes.</p>
+      <div class="stepper revelar">
+        <ol class="stepper-pasos" id="m-pasos" role="tablist"></ol>
+        <div class="stepper-panel" id="m-panel" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="embudo" class="seccion">
+      <h2 class="titulo revelar">El embudo que uso</h2>
+      <p class="lead revelar">Para pasar de seguidores a clientes, cada pieza tiene un lugar en el recorrido.</p>
+      <div class="embudo" id="m-embudo"></div>
+    </section>
+
+    <section id="metricas" class="seccion">
+      <h2 class="titulo revelar">Qué mido</h2>
+      <p class="lead revelar">Las métricas dependen del objetivo. Estas son las que reviso en cada caso.</p>
+      <div class="metricas" id="m-metricas"></div>
+      <div class="cifras" id="m-pruebas"></div>
+    </section>
+
+    <section id="herramientas-sec" class="seccion">
+      <h2 class="titulo revelar">Con qué trabajo</h2>
+      <ul class="chips grande revelar" id="m-herramientas"></ul>
+    </section>
+
+    <section id="preguntas" class="seccion">
+      <h2 class="titulo revelar">Preguntas frecuentes</h2>
+      <div class="faq" id="m-preguntas"></div>
+    </section>
+
+    <section class="seccion">
+      <div class="cta-final revelar">
+        <h2 id="m-llamado"></h2>
+        <div class="botones">
+          <a href="index.html#contacto" class="btn primario">Escríbeme</a>
+          <a href="index.html#proyectos" class="btn">Ver proyectos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>© <span id="anio"></span> <span id="pie-nombre"></span></p>
+    <a href="#" aria-label="Volver arriba">↑ Arriba</a>
+  </footer>
+
+  <script src="datos.js"></script>
+  <script src="trabajo.js"></script>
+  <script src="comun.js"></script>
+</body>
+</html>
