@@ -232,7 +232,7 @@ nav { margin-left: auto; }
 .modal-caja { max-width: 860px; }
 .modal-caja .tarjeta-img { aspect-ratio: auto; max-height: 60vh; }
 .modal-caja .tarjeta-img img { max-height: 60vh; }
-.galeria { display: grid; gap: .8rem; margin-top: 1.2rem; }
+.galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .8rem; margin-top: 1.2rem; align-items: start; }
 .galeria img { border-radius: 10px; background: #12142b; }
 .bloque { margin-top: 1.1rem; }
 .bloque h4 { font: 600 .78rem "Inter", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--acento); margin-bottom: .25rem; }
@@ -331,3 +331,7 @@ nav { margin-left: auto; }
 }
 .flecha.izq { left: -8px; } .flecha.der { right: -8px; }
 @media (hover: none) { .flecha { display: none; } }
+
+.videos figure { flex: 0 0 auto; width: min(220px, 60vw); scroll-snap-align: start; }
+.videos video { width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; background: #000; display: block; box-shadow: var(--sombra); }
+.videos figcaption { font-size: .82rem; color: var(--muted); margin-top: .4rem; }

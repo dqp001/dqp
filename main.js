@@ -129,6 +129,8 @@
               <button class="flecha der" aria-label="Siguiente">›</button>
             </div>
           </div>`).join("")}
+        ${(p.videos || []).length ? `<div class="bloque"><h4>Reels</h4><div class="pista videos">${p.videos.map((v) => `
+          <figure><video src="${esc(v.src)}" poster="${esc(v.poster)}" controls playsinline preload="none"></video><figcaption>${esc(v.titulo)}</figcaption></figure>`).join("")}</div></div>` : ""}
         ${(p.galeria || []).length ? `<div class="galeria">${p.galeria.map((g) => `<img src="${esc(g)}" alt="${esc(p.titulo)}" loading="lazy">`).join("")}</div>` : ""}
         <ul class="etiquetas">${p.etiquetas.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
         ${enlaces ? `<div class="botones">${enlaces}</div>` : ""}
@@ -143,7 +145,7 @@
     const paso = pista.querySelector("img").offsetWidth + 12;
     pista.scrollBy({ left: f.classList.contains("izq") ? -paso : paso, behavior: "smooth" });
   });
-  const cerrar = () => { modal.hidden = true; document.body.style.overflow = ""; };
+  const cerrar = () => { modal.querySelectorAll("video").forEach((v) => v.pause()); modal.hidden = true; document.body.style.overflow = ""; };
   $("#lista-proyectos").addEventListener("click", (e) => {
     const t = e.target.closest(".tarjeta");
     if (t) abrir(+t.dataset.i);
