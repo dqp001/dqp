@@ -13,6 +13,7 @@ const DATOS = {
     "Community Manager",
     "Branding e identidad visual",
     "Meta Ads y generación de leads",
+    "Especialista en pauta digital",
   ],
   frase: "No creo contenido, construyo estrategias que convierten.",
   descripcion:
@@ -58,14 +59,14 @@ const DATOS = {
 
   habilidades: [
     { grupo: "Contenido y comunidad", items: ["Calendarios de contenido", "Copywriting", "Programación", "Moderación", "Métricas y reportes"] },
-    { grupo: "Paid media y CRM", items: ["Meta Ads (leads)", "Email marketing", "Lead nurturing", "Prospección B2B", "Segmentación de bases"] },
+    { grupo: "Paid media y CRM", items: ["Meta Ads (leads)", "Auditoría de cuentas", "Reportes ejecutivos", "Email marketing", "Lead nurturing", "Prospección B2B", "Segmentación de bases"] },
     { grupo: "Diseño y video", items: ["Branding e identidad", "Logotipos y manuales", "Piezas para redes", "Reels verticales", "Presentaciones", "Landing pages"] },
     { grupo: "Negocio y producto digital", items: ["Estrategia de precios", "Diseño de producto digital", "Venta por redes y WhatsApp", "Facturación y control de obra", "IA generativa"] },
   ],
 
   herramientas: [
     "HubSpot", "Meta Ads Manager", "Meta Business Suite", "Mailchimp", "Waalaxy", "Canva Pro",
-    "CapCut", "Illustrator", "Photoshop", "Notion", "Asana", "Trello", "Google Workspace", "Hojas de cálculo", "PayPal", "IA generativa (Claude)",
+    "CapCut", "Illustrator", "Photoshop", "Notion", "Asana", "Trello", "Google Workspace", "Hojas de cálculo", "PayPal", "PowerPoint", "WhatsApp Business", "IA generativa (Claude)",
   ],
 
   proceso: [
@@ -89,8 +90,22 @@ const DATOS = {
       participacion: "Diagnóstico con diagrama de Ishikawa y propuesta del embudo: contenido orgánico y Meta Ads, formularios con datos clave, email marketing, webinar y grupo de WhatsApp.",
       resultado: "140 registros al webinar, 30 asistentes reales, 40 miembros en la comunidad. Email: apertura de 26 a 44%, CTR de hasta 13%, CTOR de hasta 42%. En 2026, 5 de 9 precalificados ya calificaron, con más de $6,000,000 MXN generados.",
       imagen: "img/koud-embudo.jpg",
-      galeria: ["img/koud-webinar.jpg"],
+      carruseles: [
+        { titulo: "Pieza de conversión · Webinar del 4 de diciembre de 2025", carpeta: "KOUD_S3_Webinar_3_errores_IA", laminas: 5 },
+      ],
       etiquetas: ["Meta Ads", "Embudo", "Email marketing", "Webinar"],
+    },
+    {
+      titulo: "Gestión y optimización de Meta Ads para e-commerce de crédito",
+      cliente: "Especialista en Pauta Digital (freelance) · Sep 2026 – actualidad",
+      categoria: "Paid media",
+      descripcion: "Auditoría, reportes ejecutivos y optimización de presupuesto en campañas de leads por WhatsApp y Messenger para un retail de celulares a crédito.",
+      objetivo: "Controlar el gasto y mejorar el costo por resultado de las campañas de generación de leads, con seguimiento directo de dirección y gerencia.",
+      participacion: "Auditoría integral de la cuenta (entrega, costo por resultado y gasto sin presupuesto autorizado). Reportes ejecutivos semanales en PowerPoint con gráficas y KPIs. Optimización de presupuestos por campaña y conjunto de anuncios, y resolución de frenos de entrega (método de pago, revisión de anuncios). Copys orientados a conversión, respuestas automatizadas por palabra clave y coordinación con stakeholders para aprobar presupuestos y lanzar promociones estacionales como el Buen Fin.",
+      resultado: "Más de 6 reportes ejecutivos semanales, más de 10 campañas auditadas y optimizadas, y cerca del 80% del presupuesto bajo control con alertas de desviación.",
+      imagen: "img/caso-meta-ads.jpg",
+      miniatura: "img/caso-meta-ads-mini.jpg",
+      etiquetas: ["Meta Ads Manager", "Reportes", "Análisis de datos", "WhatsApp Business", "Copywriting"],
     },
     {
       titulo: "Calendario de LinkedIn B2B: 4 semanas",
@@ -100,8 +115,14 @@ const DATOS = {
       objetivo: "Construir autoridad en IA y automatización con tomadores de decisión, y generar prospectos B2B y registros a webinars.",
       participacion: "Armé el calendario (tendencias, caso de uso, evento y liderazgo), redacté los textos y diseñé los carruseles dentro de la identidad de KOUD.",
       resultado: "La comunidad de LinkedIn pasó de 800 a más de 1,190 seguidores, con mejor engagement gracias al contenido educativo especializado.",
-      imagen: "img/koud-tendencias.jpg",
-      galeria: ["img/koud-webinar.jpg"],
+      imagen: "img/carruseles/KOUD_S1_Automatizacion_2025_tendencias_carrusel.jpg",
+      miniatura: "img/koud-linkedin-mini.jpg",
+      carruseles: [
+        { titulo: "Semana 1 · Automatización 2025: 4 tendencias", carpeta: "KOUD_S1_Automatizacion_2025_tendencias", laminas: 6 },
+        { titulo: "Semana 2 · ¿Tu cierre contable depende de tareas manuales?", carpeta: "KOUD_S2_Cierre_contable_manual", laminas: 5 },
+        { titulo: "Semana 3 · Webinar: 3 errores al implementar IA", carpeta: "KOUD_S3_Webinar_3_errores_IA", laminas: 5 },
+        { titulo: "Semana 4 · No toda decisión tecnológica es estratégica", carpeta: "KOUD_S4_Decision_tecnologica_estrategica", laminas: 5 },
+      ],
       etiquetas: ["LinkedIn", "Carruseles", "Copywriting", "B2B"],
     },
     {
@@ -112,8 +133,16 @@ const DATOS = {
       objetivo: "Posicionarme como estratega de marketing para dueños de negocio y generar consultas por mensaje directo.",
       participacion: "Cuenta propia que creé y gestiono: estrategia, texto del diseño, caption y diseño de los seis carruseles. Ganchos contrarios, listas de problemas y un diagnóstico que lleva a una oferta de baja fricción.",
       resultado: "Métricas que sigo: alcance, guardados, compartidos, comentarios, seguidores, mensajes y consultas.",
-      imagen: "img/dqp-liderazgo.jpg",
-      galeria: ["img/dqp-senales.jpg"],
+      imagen: "img/carruseles/IG_S2_Publicar_todos_los_dias_no_es_estrategia_carrusel.jpg",
+      miniatura: "img/dqp-mkt-mini.jpg",
+      carruseles: [
+        { titulo: "Semana 1 · El marketing no es solo publicar", carpeta: "IG_S1_El_marketing_no_es_solo_publicar", laminas: 8 },
+        { titulo: "Semana 2 · Publicar todos los días NO es estrategia", carpeta: "IG_S2_Publicar_todos_los_dias_no_es_estrategia", laminas: 7 },
+        { titulo: "Semana 3 · 5 errores de marketing que están matando negocios", carpeta: "IG_S3_5_errores_de_marketing", laminas: 7 },
+        { titulo: "Semana 4 · 3 estrategias de contenido que generan clientes", carpeta: "IG_S4_3_estrategias_de_contenido", laminas: 7 },
+        { titulo: "Semana 5 · 4 señales de que tu marketing no funciona", carpeta: "IG_S5_4_senales_marketing_no_funciona", laminas: 6 },
+        { titulo: "Semana 6 · Si tienes un negocio, esto es para ti", carpeta: "IG_S6_Si_tienes_un_negocio", laminas: 8 },
+      ],
       enlace: "https://www.instagram.com/dqp_mkt",
       etiquetas: ["Instagram", "Estrategia", "Diseño", "Copy"],
     },
@@ -147,7 +176,9 @@ const DATOS = {
       objetivo: "Ofrecer recetas prácticas para mamás con poco tiempo y presupuesto, familias veganas y niños con alergias, en PDF que llega al instante y con una oferta fácil de elegir.",
       participacion: "Escribí los 7 libros y diseñé la estrategia de precios y paquetes (de $89 a $349 MXN) para aumentar el ticket promedio. Produje el material de venta: anuncios para Facebook e Instagram, historias, catálogo, tabla comparativa y muestras gratuitas. Escribí los textos publicitarios y guiones de venta por WhatsApp, ejecuté campañas de lanzamiento y de urgencia, e implementé el cobro con PayPal y transferencia y la entrega digital por WhatsApp. Dirigí y edité el contenido con apoyo de IA (Claude) y Canva.",
       resultado: "Oferta en tres niveles: libro suelto ($89 a $99), colecciones ($249 y $299) y paquete completo en $349, con el ahorro a la vista (por separado serían $633). Proceso completo de venta, cobro y entrega funcionando.",
-      imagen: "img/mesa-para-todos.jpg",
+      imagen: "img/caso-mesa-para-todos.jpg",
+      miniatura: "img/caso-mesa-para-todos-mini.jpg",
+      galeria: ["img/mesa-para-todos.jpg"],
       etiquetas: ["Copywriting", "Branding", "Estrategia de precios", "Venta por redes", "IA generativa"],
     },
     {
@@ -158,7 +189,8 @@ const DATOS = {
       objetivo: "Ordenar la administración de una empresa de remodelación y darle una presencia en redes pensada para EE. UU. y México.",
       participacion: "Diseñé un sistema de facturación por etapas (depósito, pago de progreso, órdenes de cambio y factura final) con una herramienta propia que genera facturas en PDF y calcula saldos. Armé una hoja de control de obra con cobranza, gastos por categoría, asistencia y horas extra según las reglas laborales de California. Investigué tendencias de redes en EE. UU. y México y elaboré dos calendarios mensuales (inglés y español) con guiones y métricas.",
       resultado: "Más de 20 reels verticales bilingües editados en formatos de tendencia (POV, antes y después, pantalla dividida), y un sistema de facturación y control de obra listo para usar.",
-      imagen: "",
+      imagen: "img/caso-remodelacion.jpg",
+      miniatura: "img/caso-remodelacion-mini.jpg",
       etiquetas: ["Hojas de cálculo", "Automatización", "CapCut", "Reels", "Contenido bilingüe"],
     },
     {
@@ -175,6 +207,12 @@ const DATOS = {
   ],
 
   experiencia: [
+    {
+      fecha: "Sep 2026 — Actualidad",
+      puesto: "Especialista en Pauta Digital (Freelance)",
+      lugar: "Cliente: retail de celulares a crédito",
+      texto: "Auditoría de Meta Ads, reportes ejecutivos semanales con KPIs, optimización de presupuestos, copys de conversión, respuestas automatizadas en WhatsApp/Messenger y promociones estacionales (Buen Fin).",
+    },
     {
       fecha: "Nov 2026",
       puesto: "Sistema administrativo y de marketing",

@@ -61,13 +61,13 @@
   $("#ubicacion").textContent = D.ubicacion ? `📍 ${D.ubicacion}` : "";
 
   // ---------- Proyectos ----------
-  const imagen = (p, i) => p.imagen
-    ? `<img src="${esc(p.imagen)}" alt="${esc(p.titulo)}" loading="lazy">`
+  const imagen = (p, i, mini) => p.imagen
+    ? `<img src="${esc((mini && p.miniatura) || p.imagen)}" alt="${esc(p.titulo)}" loading="lazy">`
     : `<div class="placeholder" style="background:linear-gradient(135deg,${colores[i % colores.length].join(",")})">${esc(p.titulo.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase())}</div>`;
 
   $("#lista-proyectos").innerHTML = D.proyectos.map((p, i) => `
     <article class="tarjeta revelar${p.destacado ? " destacada" : ""}" data-cat="${esc(p.categoria)}" data-i="${i}" tabindex="0">
-      <div class="tarjeta-img">${imagen(p, i)}</div>
+      <div class="tarjeta-img">${imagen(p, i, true)}</div>
       <div class="tarjeta-cuerpo">
         <span class="cat">${esc(p.categoria)}${p.destacado ? '<span class="insignia">Caso destacado</span>' : ""}</span>
         <h3>${esc(p.titulo)}</h3>
@@ -119,6 +119,16 @@
         <p>${esc(p.descripcion)}</p>
         ${[["Objetivo", p.objetivo], ["Mi participación", p.participacion], ["Resultado", p.resultado]]
           .filter((b) => b[1]).map((b) => `<div class="bloque"><h4>${b[0]}</h4><p>${esc(b[1])}</p></div>`).join("")}
+        ${(p.carruseles || []).map((c) => `
+          <div class="bloque carrusel-bloque">
+            <h4>${esc(c.titulo)}</h4>
+            <div class="carrusel">
+              <button class="flecha izq" aria-label="Anterior">‹</button>
+              <div class="pista">${Array.from({ length: c.laminas }, (_, k) =>
+                `<img src="img/carruseles/${esc(c.carpeta)}/lamina_${k + 1}.jpg" alt="${esc(c.titulo)}, lámina ${k + 1}" loading="lazy">`).join("")}</div>
+              <button class="flecha der" aria-label="Siguiente">›</button>
+            </div>
+          </div>`).join("")}
         ${(p.galeria || []).length ? `<div class="galeria">${p.galeria.map((g) => `<img src="${esc(g)}" alt="${esc(p.titulo)}" loading="lazy">`).join("")}</div>` : ""}
         <ul class="etiquetas">${p.etiquetas.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
         ${enlaces ? `<div class="botones">${enlaces}</div>` : ""}
@@ -126,6 +136,13 @@
     modal.hidden = false;
     document.body.style.overflow = "hidden";
   };
+  modal.addEventListener("click", (e) => {
+    const f = e.target.closest(".flecha");
+    if (!f) return;
+    const pista = f.parentElement.querySelector(".pista");
+    const paso = pista.querySelector("img").offsetWidth + 12;
+    pista.scrollBy({ left: f.classList.contains("izq") ? -paso : paso, behavior: "smooth" });
+  });
   const cerrar = () => { modal.hidden = true; document.body.style.overflow = ""; };
   $("#lista-proyectos").addEventListener("click", (e) => {
     const t = e.target.closest(".tarjeta");
