@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="Portfolio personal">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="progreso" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#inicio" class="logo" id="logo"></a>
+    <nav>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="links">
+        <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="tema" aria-label="Cambiar tema">◐</button>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <canvas id="particulas" aria-hidden="true"></canvas>
+      <div class="hero-contenido">
+        <div class="avatar" id="avatar"></div>
+        <p class="saludo">Hola, soy</p>
+        <h1 id="nombre"></h1>
+        <h2 class="rol"><span id="escribiendo"></span><span class="cursor">|</span></h2>
+        <p id="descripcion" class="lead"></p>
+        <div class="botones">
+          <a href="#proyectos" class="btn primario">Ver proyectos</a>
+          <a href="#" id="btn-cv" class="btn" target="_blank" rel="noopener">Descargar CV</a>
+        </div>
+        <ul class="redes" id="redes-hero"></ul>
+      </div>
+      <a href="#sobre" class="scroll-abajo" aria-label="Bajar">↓</a>
+    </section>
+
+    <section id="sobre" class="seccion">
+      <h2 class="titulo revelar">Sobre mí</h2>
+      <div class="sobre-grid">
+        <div id="sobre-texto" class="revelar"></div>
+        <div class="habilidades revelar" id="habilidades"></div>
+      </div>
+      <div class="cifras" id="cifras"></div>
+    </section>
+
+    <section id="proyectos" class="seccion">
+      <h2 class="titulo revelar">Proyectos</h2>
+      <div class="filtros revelar" id="filtros"></div>
+      <div class="proyectos" id="lista-proyectos"></div>
+    </section>
+
+    <section id="experiencia" class="seccion">
+      <h2 class="titulo revelar">Experiencia</h2>
+      <ol class="linea-tiempo" id="linea-tiempo"></ol>
+    </section>
+
+    <section id="contacto" class="seccion">
+      <h2 class="titulo revelar">Contacto</h2>
+      <div class="contacto-grid">
+        <div class="revelar">
+          <p class="lead">¿Tienes un proyecto en mente o una oferta? Escríbeme.</p>
+          <p><a id="email-link" class="email"></a></p>
+          <p id="ubicacion" class="muted"></p>
+          <ul class="redes" id="redes-contacto"></ul>
+        </div>
+        <form id="formulario" class="formulario revelar">
+          <label>Nombre<input name="nombre" required></label>
+          <label>Email<input name="email" type="email" required></label>
+          <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
+          <button class="btn primario" type="submit">Enviar mensaje</button>
+          <p class="estado" id="estado" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>© <span id="anio"></span> <span id="pie-nombre"></span></p>
+    <a href="#inicio" aria-label="Volver arriba">↑ Arriba</a>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-caja" role="dialog" aria-modal="true">
+      <button class="cerrar" aria-label="Cerrar">✕</button>
+      <div id="modal-contenido"></div>
+    </div>
+  </div>
+
+  <script src="datos.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
